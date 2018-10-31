@@ -36,11 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.ScaleUpDown = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScaleUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // GraphPlane
@@ -124,23 +124,23 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Iterations:";
             // 
-            // numericUpDown2
+            // ScaleUpDown
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(718, 30);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.ScaleUpDown.Location = new System.Drawing.Point(718, 30);
+            this.ScaleUpDown.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown2.Minimum = new decimal(new int[] {
+            this.ScaleUpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(70, 20);
-            this.numericUpDown2.TabIndex = 8;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.ScaleUpDown.Name = "ScaleUpDown";
+            this.ScaleUpDown.Size = new System.Drawing.Size(70, 20);
+            this.ScaleUpDown.TabIndex = 8;
+            this.ScaleUpDown.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -170,10 +170,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 511);
+            this.ClientSize = new System.Drawing.Size(804, 481);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.ScaleUpDown);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label2);
@@ -184,8 +184,9 @@
             this.Controls.Add(this.GraphPlane);
             this.Name = "Form1";
             this.Text = "Mandelbrot Grapher";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScaleUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,7 +202,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown ScaleUpDown;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
     }
