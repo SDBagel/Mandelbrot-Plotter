@@ -32,6 +32,7 @@ namespace Mandelbrot_Plotter
             }
                 
             GraphPoint(real, imaginary, (double)ScaleUpDown.Value, color);
+            richTextBox1.Text += $"Z[1] = {real} + {imaginary}i \n";
             for (int i = 1; i < numericUpDown1.Value; i++)
             {
                 double newreal = (real * real) - (imaginary * imaginary) + originalreal;
@@ -86,7 +87,10 @@ namespace Mandelbrot_Plotter
                 Location = new Point(GraphPlane.Size.Width/2 - 28 + GraphPlane.Size.Width/4, (GraphPlane.Size.Height / 2))
             };
 
-            xMarker.label1.Text = $"{(xMarker.Location.X - GraphPlane.Size.Width / 2 + 28) / scale}".Substring(0, 3);
+            string val = $"{(xMarker.Location.X - GraphPlane.Size.Width / 2 + 28) / scale}";
+            if (val.Length > 4)
+                val = $"{(xMarker.Location.X - GraphPlane.Size.Width / 2 + 28) / scale}".Substring(0, 4);
+            xMarker.label1.Text = val;
             GraphPlane.Controls.Add(xMarker);
 
             xMarker = new AxisMarker
@@ -94,7 +98,10 @@ namespace Mandelbrot_Plotter
                 Location = new Point(GraphPlane.Size.Width / 2 - 28 - GraphPlane.Size.Width / 4, (GraphPlane.Size.Height / 2))
             };
 
-            xMarker.label1.Text = $"{(xMarker.Location.X - GraphPlane.Size.Width / 2 + 28) / scale}".Substring(0, 4);
+            val = $"{(xMarker.Location.X - GraphPlane.Size.Width / 2 + 28) / scale}";
+            if (val.Length > 5)
+                val = $"{(xMarker.Location.X - GraphPlane.Size.Width / 2 + 28) / scale}".Substring(0, 5);
+            xMarker.label1.Text = val;
             GraphPlane.Controls.Add(xMarker);
         }
 
