@@ -17,40 +17,74 @@ namespace Mandelbrot_Plotter
             InitializeComponent();
         }
 
-        private void GraphPoint(int x, int y, int scale)
+        private void GraphPoint(double x, double y, double scale, Color ptColor)
         {
             var newpt = new PictureBox
             {
-                BackColor = Color.Orange,
-                Location = new Point((panel1.Width / 2 + x*scale)-2, (panel1.Height / 2 - y*scale)-2),
+                BackColor = ptColor,
+                Location = new Point((int)Math.Round(GraphPlane.Width / 2 + x*scale-2.0), (int)Math.Round(GraphPlane.Height / 2 - y*scale-2)),
                 Size = new Size(4, 4)
             };
 
-            panel1.Controls.Add(newpt);
+            GraphPlane.Controls.Add(newpt);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string uI = textBox1.Text;
-            int real = int.Parse(uI.Split('+')[0].Trim());
-            int imaginary = int.Parse(uI.Split('+')[1].Trim());
-
-            int originalreal = real;
-            int originalimaginary = imaginary;
-
-            richTextBox1.Text += $"Z[1] = {real} + {imaginary}i \n";
-
-            panel1.Controls.Clear();
-            GraphPoint(real, imaginary, (int)numericUpDown2.Value);
-            for (int i = 0; i < numericUpDown1.Value; i++)
+            if (!string.IsNullOrEmpty(textBox1.Text))
             {
-                int newreal = real ^ 2 - imaginary ^ 2 + originalreal;
-                int newimaginary = 2 * (real * imaginary) + originalimaginary;
+                string uI = textBox1.Text.TrimEnd('i');
+                double real = double.Parse(uI.Split('+')[0].Trim());
+                double imaginary = double.Parse(uI.Split('+')[1].Trim());
 
-                GraphPoint(newreal, newimaginary, (int)numericUpDown2.Value);
+                double originalreal = real;
+                double originalimaginary = imaginary;
 
-                real = newreal;
-                imaginary = newimaginary;
+                richTextBox1.Text = "";
+
+                Random rnd = new Random();
+                Color color = Color.FromArgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255));
+
+                GraphPlane.Controls.Clear();
+                for (int i = 0; i < numericUpDown1.Value; i++)
+                {
+                    double newreal = (real * real) - (imaginary * imaginary) + originalreal;
+                    double newimaginary = 2 * (real * imaginary) + originalimaginary;
+
+                    richTextBox1.Text += $"Z[{i + 1}] = {real} + {imaginary}i \n";
+                    GraphPoint(newreal, newimaginary, (double)numericUpDown2.Value, color);
+
+                    real = newreal;
+                    imaginary = newimaginary;
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox1.Text))
+            {
+                string uI = textBox1.Text.TrimEnd('i');
+                double real = double.Parse(uI.Split('+')[0].Trim());
+                double imaginary = double.Parse(uI.Split('+')[1].Trim());
+
+                double originalreal = real;
+                double originalimaginary = imaginary;
+
+                Random rnd = new Random();
+                Color color = Color.FromArgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255));
+                
+                for (int i = 0; i < numericUpDown1.Value; i++)
+                {
+                    double newreal = (real * real) - (imaginary * imaginary) + originalreal;
+                    double newimaginary = 2 * (real * imaginary) + originalimaginary;
+
+                    richTextBox1.Text += $"X[{i + 1}] = {real} + {imaginary}i \n";
+                    GraphPoint(newreal, newimaginary, (double)numericUpDown2.Value, color);
+
+                    real = newreal;
+                    imaginary = newimaginary;
+                }
             }
         }
     }
