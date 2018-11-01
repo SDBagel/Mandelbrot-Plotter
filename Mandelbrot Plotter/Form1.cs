@@ -32,6 +32,7 @@ namespace Mandelbrot_Plotter
             }
                 
             GraphPoint(real, imaginary, (double)ScaleUpDown.Value, color);
+            richTextBox1.Text += $"\nNew Sequence: (Color: ({color.R}, {color.G}, {color.B}))\n\n";
             richTextBox1.Text += $"Z[1] = {real} + {imaginary}i \n";
             for (int i = 1; i < numericUpDown1.Value; i++)
             {

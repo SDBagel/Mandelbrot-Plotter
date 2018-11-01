@@ -8,15 +8,4 @@ C:\Users\douch\source\repos\Mandelbrot Plotter\Mandelbrot Plotter\obj\Debug\Mand
 C:\Users\douch\source\repos\Mandelbrot Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot Plotter.csproj.CoreCompileInputs.cache
 C:\Users\douch\source\repos\Mandelbrot Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot Plotter.exe
 C:\Users\douch\source\repos\Mandelbrot Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot Plotter.pdb
-Z:\Lvl 1 Containment Field\Projects\GitHub\Mandelbrot-Plotter\Mandelbrot Plotter\bin\Debug\Mandelbrot Plotter.exe.config
-Z:\Lvl 1 Containment Field\Projects\GitHub\Mandelbrot-Plotter\Mandelbrot Plotter\bin\Debug\Mandelbrot Plotter.exe
-Z:\Lvl 1 Containment Field\Projects\GitHub\Mandelbrot-Plotter\Mandelbrot Plotter\bin\Debug\Mandelbrot Plotter.pdb
-Z:\Lvl 1 Containment Field\Projects\GitHub\Mandelbrot-Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot Plotter.csprojAssemblyReference.cache
-Z:\Lvl 1 Containment Field\Projects\GitHub\Mandelbrot-Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot_Plotter.Form1.resources
-Z:\Lvl 1 Containment Field\Projects\GitHub\Mandelbrot-Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot_Plotter.Properties.Resources.resources
-Z:\Lvl 1 Containment Field\Projects\GitHub\Mandelbrot-Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot Plotter.csproj.GenerateResource.cache
-Z:\Lvl 1 Containment Field\Projects\GitHub\Mandelbrot-Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot Plotter.csproj.CoreCompileInputs.cache
-Z:\Lvl 1 Containment Field\Projects\GitHub\Mandelbrot-Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot Plotter.exe
-Z:\Lvl 1 Containment Field\Projects\GitHub\Mandelbrot-Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot Plotter.pdb
 C:\Users\douch\source\repos\Mandelbrot Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot_Plotter.AxisMarker.resources
-Z:\Lvl 1 Containment Field\Projects\GitHub\Mandelbrot-Plotter\Mandelbrot Plotter\obj\Debug\Mandelbrot_Plotter.AxisMarker.resources
