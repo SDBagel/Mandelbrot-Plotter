@@ -67,42 +67,72 @@ namespace Mandelbrot_Plotter
             var xAx = new PictureBox
             {
                 BackColor = Color.Black,
-                Location = new Point(0, GraphPlane.Size.Height / 2),
-                Size = new Size(GraphPlane.Size.Width, 1)
+                Location = new Point(0, GraphPlane.Height / 2),
+                Size = new Size(GraphPlane.Width, 1)
             };
 
             var yAx = new PictureBox
             {
                 BackColor = Color.Black,
-                Location = new Point(GraphPlane.Size.Width / 2, 0),
+                Location = new Point(GraphPlane.Width / 2, 0),
                 Size = new Size(1, GraphPlane.Height)
             };
 
             GraphPlane.Controls.Add(xAx);
             GraphPlane.Controls.Add(yAx);
-            
+
+            Point origin = new Point(GraphPlane.Width / 2, GraphPlane.Height / 2);
+
+            var oMarker = new AxisMarker
+            {
+                Location = new Point(origin.X - 28, origin.Y)
+            };
+            oMarker.label1.Text = "0";
+            GraphPlane.Controls.Add(oMarker);
 
             var xMarker = new AxisMarker
             {
-                Location = new Point(GraphPlane.Size.Width/2 - 28 + GraphPlane.Size.Width/4, (GraphPlane.Size.Height / 2))
+                Location = new Point(GraphPlane.Width/2 - 28 + GraphPlane.Width/4, (GraphPlane.Height / 2))
             };
 
-            string val = $"{(xMarker.Location.X - GraphPlane.Size.Width / 2 + 28) / scale}";
+            string val = $"{(xMarker.Location.X - GraphPlane.Width / 2 + 28) / scale}";
             if (val.Length > 4)
-                val = $"{(xMarker.Location.X - GraphPlane.Size.Width / 2 + 28) / scale}".Substring(0, 4);
+                val = $"{(xMarker.Location.X - GraphPlane.Width / 2 + 28) / scale}".Substring(0, 4);
             xMarker.label1.Text = val;
             GraphPlane.Controls.Add(xMarker);
 
             xMarker = new AxisMarker
             {
-                Location = new Point(GraphPlane.Size.Width / 2 - 28 - GraphPlane.Size.Width / 4, (GraphPlane.Size.Height / 2))
+                Location = new Point(GraphPlane.Width / 2 - 28 - GraphPlane.Width / 4, (GraphPlane.Height / 2))
             };
 
-            val = $"{(xMarker.Location.X - GraphPlane.Size.Width / 2 + 28) / scale}";
+            val = $"{(xMarker.Location.X - GraphPlane.Width / 2 + 28) / scale}";
             if (val.Length > 5)
-                val = $"{(xMarker.Location.X - GraphPlane.Size.Width / 2 + 28) / scale}".Substring(0, 5);
+                val = $"{(xMarker.Location.X - GraphPlane.Width / 2 + 28) / scale}".Substring(0, 5);
             xMarker.label1.Text = val;
             GraphPlane.Controls.Add(xMarker);
+
+            var yMarker = new AxisMarker
+            {
+                Location = new Point(GraphPlane.Width / 2 - 28, (GraphPlane.Height / 2) - (GraphPlane.Height / 4))
+            };
+
+            val = $"{(-yMarker.Location.Y + GraphPlane.Height / 2) / scale}";
+            if (val.Length > 4)
+                val = $"{(-yMarker.Location.Y + GraphPlane.Height / 2) / scale}".Substring(0, 5);
+            yMarker.label1.Text = val;
+            GraphPlane.Controls.Add(yMarker);
+
+            yMarker = new AxisMarker
+            {
+                Location = new Point(GraphPlane.Width / 2 - 28, (GraphPlane.Height / 2) + (GraphPlane.Height / 4))
+            };
+
+            val = $"{-(yMarker.Location.Y - GraphPlane.Height / 2) / scale}";
+            if (val.Length > 4)
+                val = $"{-(yMarker.Location.Y - GraphPlane.Height / 2) / scale}".Substring(0, 5);
+            yMarker.label1.Text = val;
+            GraphPlane.Controls.Add(yMarker);
         }
 
         private void button1_Click(object sender, EventArgs e)
